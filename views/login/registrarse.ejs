@@ -1,0 +1,23 @@
+<%- include('../partials/blank_header.ejs') %>
+<form class="form-signin" action="/login/access" method="post">
+  <h1 class="h3 mb-3 font-weight-normal">Registrarse</h1>
+  <input type="hidden" name="key" value="value">
+  <span class="extraData"></span>
+  <!--EMAL -->
+  <label for="user" class="sr-only">User</label>
+  <input type="text" id="mail" class="form-control" placeholder="Correo" required="" autofocus="" name="mail">
+  <input type="text" id="nombre" class="form-control" placeholder="Nombre" required="" autofocus="" name="nombre">
+  <input type="text" id="password" class="form-control" placeholder="Password" required="" autofocus="" name="password">
+  <!--CSRF -->
+  <input type="hidden" name="<%= constants.csrf.key %>" value="<%= constants.csrf.secret %>">
+    <!--MESSAGE-->
+  <p class="<%= message_color %> message" style="margin-top:10px;" id="login-message"><%= message %></p>
+  <!--BUTTON -->
+  <button class="btn btn-lg btn-primary btn-block" type="submit">
+  Regitrarse
+  </button>
+  <!--FooTER LOGIN NAV -->
+  
+  <p class="mt-5 mb-3 text-muted">Powered By <a href="http://softweb.pe/"> Softtware Web Perú</a> © 2017-2018</p>
+</form>
+<%- include('../partials/blank_footer.ejs') %>
